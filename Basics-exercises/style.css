@@ -1,0 +1,13 @@
+.container{
+background-color: RED;
+font-size: 32px;
+font-weight: bold;
+text-align: center;
+color: white;
+}
+#para{
+    background-color: green;
+    font-size: 18px;
+    color: white;
+
+}
