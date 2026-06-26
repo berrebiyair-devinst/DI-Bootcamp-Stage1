@@ -90,4 +90,3 @@ def main():
     else:
         print("It's really hot! Stay cool and in the shade.")
 
-get_random_temp(12)
