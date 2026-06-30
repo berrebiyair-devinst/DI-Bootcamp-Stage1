@@ -1,118 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
+
 <body>
-    <h1>Exercise</h1>
-    <script>
-        // exercise 1
-     const people = ["Greg", "Mary", "Devon", "James"];
 
-    people.shift()
-    people[3]="Jason"
-    people.push=("Yair")
-    people.indexOf("Mary")
+<h1>Exercise</h1>
 
-    copy_people=people.slice(2,3)
+<script>
 
-    people.indexOf("foo")
+// exercise 1
 
-    last= people[people.lenght - 1];
-  
-    console.log(people)
+const people = ["Greg", "Mary", "Devon", "James"];
+
+people.shift();
+
+people[people.indexOf("James")] = "Jason";
+
+people.push("Yair");
+
+console.log(people.indexOf("Mary"));
+
+let copy_people = people.slice(2);
+
+console.log(people.indexOf("foo"));
+
+let last = people[people.length - 1];
+
+console.log(last);
+
 
 for (let name of people){
-      console.log(name);
-    if (name === "Devon"){
-    break 
-  }
-   
+
+    console.log(name);
+
+    if(name === "Devon"){
+        break;
+    }
 }
+
 
 // Exercise 2
- const colors = ["blue","red","yellow","orange","green"]
- let count = 1
- for (let color of colors){
-     console.log("my choice number " + "is "  +color);
 
- }
+const colors = ["blue","red","yellow","orange","green"];
 
- // Exersise 3
-  const number = parseInt(prompt("Enter your number : "))
+let count = 1;
 
- while (number < 10){
-      number = parseInt(prompt("Ressayer : "))
- }
- console.log(number)
- 
-// Exersise 4
+for(let color of colors){
+
+    console.log("My choice number " + count + " is " + color);
+
+    count++;
+}
+
+
+// Exercise 3
+
+let number = parseInt(prompt("Enter your number : "));
+
+while(number < 10){
+
+    number = parseInt(prompt("Ressayer : "));
+}
+
+console.log(number);
+
+
+
+// Exercise 4
+
 const building = {
-    numberOfFloors: 4,
-    numberOfAptByFloor: {
-        firstFloor: 3,
-        secondFloor: 4,
-        thirdFloor: 9,
-        fourthFloor: 2,
-    },
-    nameOfTenants: ["Sarah", "Dan", "David"],
-    numberOfRoomsAndRent:  {
-        sarah: [3, 990],
-        dan:  [4, 1000],
-        david: [1, 500],
-    },
-}
-console.log(building.numberOfFloor)
-console.log(building.numberOfAptByFloor.thirdFloor)
-console.log(building.nameOfTenants[1])
-console.log(building.numberOfRoomsAndRent.dan[0])
 
-let totalrent= building.numberOfRoomsAndRent.sarah[1] + building.numberOfRoomsAndRent.david[1]
-if (totalrent > 1000){
-    console.log(building.numberOfRoomsAndRent.dan[1]=1200)
+numberOfFloors: 4,
+
+numberOfAptByFloor:{
+    firstFloor:3,
+    secondFloor:4,
+    thirdFloor:9,
+    fourthFloor:2,
+},
+
+nameOfTenants:["Sarah","Dan","David"],
+
+numberOfRoomsAndRent:{
+    sarah:[3,990],
+    dan:[4,1000],
+    david:[1,500],
 }
 
-// Exersise 5
+};
+
+
+console.log(building.numberOfFloors);
+
+console.log(building.numberOfAptByFloor.thirdFloor);
+
+console.log(building.nameOfTenants[1]);
+
+console.log(building.numberOfRoomsAndRent.dan[0]);
+
+
+let totalrent = 
+building.numberOfRoomsAndRent.sarah[1] +
+building.numberOfRoomsAndRent.david[1];
+
+
+if(totalrent > building.numberOfRoomsAndRent.dan[1]){
+
+    building.numberOfRoomsAndRent.dan[1] = 1200;
+
+}
+
+
+
+// Exercise 5
+
 const family = {
-    momName : "Nicole",
-    numberChildren : 7,
-    dadName: "Gerard"
+
+momName:"Nicole",
+numberChildren:7,
+dadName:"Gerard"
+
+};
+
+
+for(let key in family){
+
+console.log(key);
+
 }
 
-for (clé in family){
-    console.log(Object.keys(family))
-}
-for (values in family){
-    console.log(Object.values(family))
-}
- 
 
-// Exersise 6
+for(let value in family){
+
+console.log(family[value]);
+
+}
+
+
+
+
+// Exercise 6
+
 const details = {
-  my: 'name',
-  is: 'Rudolf',
-  the: 'reindeer'
+
+my:"name",
+is:"Rudolf",
+the:"reindeer"
+
+};
+
+
+for(let detail in details){
+
+console.log(
+"My " + details.my +
+" is " + details.is +
+" the " + details.the
+);
+
 }
 
-for (detail in details){
 
-    console.log("My" + details.my + "is" + details.is + "the" + details.the);
+
+
+// Exercise 7
+
+
+const names = [
+"Jack",
+"Philip",
+"Sarah",
+"Amanda",
+"Bernard",
+"Kyle"
+];
+
+
+const letters = names.sort();
+
+let name_fini = "";
+
+
+for(let name of letters){
+
+name_fini += name[0];
+
 }
 
-// exersise 7
-const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
-     const letter = names.sort();
-const name_fini =""
 
-for(let name of letter){
-    name_fini += name[0];
-}
-    
-console.log(letter);
-console.log(name_22);
-    </script>
+console.log(letters);
+
+console.log(name_fini);
+
+
+
+</script>
 
 </body>
 </html>
