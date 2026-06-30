@@ -8,19 +8,19 @@
 <body>
     <h1>Dailychallenge1</h1>
     <script>
-       let sentence = "The movie is not bad, I like it " 
+       const sentence = "The movie is not that bad, I like it " 
 
-       let wordNot = sentence.indexOf("not")
+       const wordNot = sentence.indexOf("not")
 
-       let wordBad = sentence.indexOf("bad")
+       const wordBad = sentence.indexOf("bad")
 
     
    if (wordNot !== -1 && wordBad !== -1 && wordBad>wordNot){
-     let result = sentence.replace("not bad", "good")
+     let result = sentence.replace("not that bad", "good")
      console.log(result)
 
    } else {
-    console.log(result)
+    console.log(sentence)
    }
 
     </script>
