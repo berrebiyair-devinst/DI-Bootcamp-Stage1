@@ -9,24 +9,28 @@
 <body>
     <h1>Dailychallenge2</h1>
     <script>
-  let star= ""
+ 
 
-  for (let i=1; i<=6; i++){
-    star += "*"
-    console.log(star)
-  }
-  
 
-  for (let i =1; i<= 6; i++){
-     let star =""
-    for(let j = 1; j<= i;j++){
-        star += "*"
+let stars = "";
+
+for (let i = 1; i <= 6; i++) {
+    stars += "* ";
+    console.log(stars);
+}
+
+
+
+for (let i = 1; i <= 6; i++) {
+
+    let line = "";
+
+    for (let j = 1; j <= i; j++) {
+        line += "* ";
     }
-    consol.log(star);
-  }
 
-
-
+    console.log(line);
+}
     </script>
 </body>
 </html>
