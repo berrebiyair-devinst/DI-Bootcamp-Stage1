@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercise 6</h1>
+
+<div id="navBar">
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">My Friends</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">My Pics</a></li>
+    </ul>
+</div>
+
+    <script>
+const navBar = document.getElementById("navBar");
+navBar.setAttribute("id", "socialNetworkNavigation");
+
+const newLi = document.createElement("li");
+const newNode = document.createTextNode("Logout");
+newLi.appendChild(newNode);
+document.querySelector("ul").appendChild(newLi);
+
+const ul = document.querySelector("ul");
+
+console.log(document.querySelector("ul").firstElementChild.textContent);
+console.log(document.querySelector("ul").lastElementChild.textContent);
+
+
+
+
+    </script>
+</body>
+</html>

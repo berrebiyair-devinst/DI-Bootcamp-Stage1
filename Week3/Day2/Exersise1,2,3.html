@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Exersise 1
+function displayNumbersDivisible(divisor){
+let sum=0;
+
+ for (let i=0; i<=500; i++){
+    if (i%divisor==0){
+        console.log(i);
+        sum += i;
+    }
+}
+console.log("Sum: " + sum);
+}
+displayNumbersDivisible(23);
+
+// exersise 2
+
+const stock = { 
+    "banana": 6, 
+    "apple": 0,
+    "pear": 12,
+    "orange": 32,
+    "blueberry":1
+}  
+
+const prices = {    
+    "banana": 4, 
+    "apple": 2, 
+    "pear": 1,
+    "orange": 1.5,
+    "blueberry":10
+} 
+
+
+
+let shoppingList= ["banana", "orange", "apple"];
+function myBill(){
+    let total=0;
+    
+    for (const article of shoppingList) {
+        if (stock[article] > 0) {
+            total += prices[article];
+        }
+    }
+    console.log("Total: $" + total);
+}
+myBill();
+
+
+// Exersise 3 
+
+function changeEnough(Price, amountOfChange){
+ let totalChange = 0;
+    const coinValues = [0.25, 0.10, 0.05, 0.01]; // Values for quarters, dimes, nickels, pennies
+
+    for (let i = 0; i < amountOfChange.length; i++) {
+        totalChange += amountOfChange[i] * coinValues[i];
+    }
+
+    return totalChange >= Price;
+}
+changeEnough(4.25, [25, 20, 5, 0])
+
+// Exersise 4
+
+function hotelCost(){
+    let pricePerNight = 140;
+    let nights = prompt("How many nights would you like to stay?");
+    if (isNaN(nights) || nights < 1) {
+        alert("Please enter a valid number of nights.");
+        return hotelCost(); // Prompt again if input is invalid
+    }else{
+            return nights*pricePerNight;
+        }
+        
+    }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

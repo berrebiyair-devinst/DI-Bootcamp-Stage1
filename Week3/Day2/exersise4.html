@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exersise 4</title>
+</head>
+<body>
+    <h1>Travel Cost Calculator</h1>
+
+    <script>
+     function hotelCost() {
+    let nights = prompt("How many nights would you like to stay at the hotel?");
+
+    while (isNaN(nights) || nights === "" || nights === null) {
+        nights = prompt("Please enter a valid number of nights:");
+    }
+
+    return nights * 140;
+}
+
+function planeRideCost(){
+   let destination = prompt("What is your destination?");
+   
+   while (destination === "" || destination === null) {
+        destination = prompt("Please enter a valid destination:");
+    }
+
+    if (destination.toLowerCase() === "london") {
+        return 183;
+    } else if (destination.toLowerCase() === "paris") {
+        return 220;
+    } else {
+        return 300;
+    }
+}
+
+
+function rentalCarCost(){
+ let day = prompt("How many days would you like to rent the car?");
+  while (isNaN(day) || day === null ){
+    day = prompt("Please enter a valid number of days:");
+    }
+
+    let cost = day * 40;
+
+    if (day > 10) {
+        cost *= 0.95; // Apply 5% discount
+    }
+
+    return cost;
+  }
+ 
+
+ function totalVacationCost() {
+    let hotel = hotelCost();
+    let plane = planeRideCost();
+    let car = rentalCarCost();
+
+    let total = hotel + plane + car;
+
+    console.log("The hotel cost: $" + hotel);
+    console.log("The plane ride cost: $" + plane);
+    console.log("The rental car cost: $" + car);
+    console.log("Total vacation cost: $" + total);
+ }
+ totalVacationCost();
+
+</script>
+</body>
+</html>

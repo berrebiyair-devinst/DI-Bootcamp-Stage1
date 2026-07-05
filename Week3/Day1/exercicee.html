@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="school-type"> 
+    <option value="middleschool">Middle School</option>
+    <option value="university">University</option>
+    <option value="college">College</option>
+
+    <button onclick="alert(js.value)">Afficher le choix sélectionné</button>
+</select>
+    <script>
+ // Dans un fichier JS, écrivez une fonction JavaScript qui :
+ //Obtenez la valeur de la 2ème option
+// Ajoutez une nouvelle option avec la valeur « Travail » à la fin du formulaire de sélection.
+// Ajoutez une nouvelle option avec la valeur « École primaire » au début du formulaire de sélection.
+// Modifiez la sélection « Université » . Utilisez les 3 propriétés que nous avons apprises ci-dessus.
+// Ajoutez un bouton qui indique le choix sélectionné.
+
+
+let js =document.getElementById("school-type")
+
+console.log(js.options[1].value); //Obtenez la valeur de la 2ème option
+
+let newoptions= new Option("work","work",false,false);
+js.add(newoptions); // Ajoutez une nouvelle option avec la valeur « Travail » à la fin du formulaire de sélection.
+
+let newoptions1=new Option("school","school",false,false);
+js.add(newoptions1,0); // Ajoutez une nouvelle option avec la valeur « École primaire » au début du formulaire de sélection.
+
+js.options[2].text="lycée";  // Modifiez la sélection « Université » . Utilisez les 3 propriétés que nous avons apprises ci-dessus.
+    
+    alert(js.value); // Ajoutez un bouton qui indique le choix sélectionné.
+    
+    
+    </script>
+
+
+
+</body>
+</html>

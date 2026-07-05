@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Exersise 5</h1>
+
+    <div id="container">Users:</div>
+<ul class="list">
+    <li>John</li>
+    <li>Pete</li>
+</ul>
+<ul class="list">
+    <li>David</li>
+    <li>Sarah</li>
+    <li>Dan</li>
+</ul>
+    <script>
+const div = document.getElementById("container");
+console.log(div.textContent);
+
+const lis = document.querySelectorAll(".list li");
+
+lis.forEach(li => {
+    if (li.textContent === "Pete") {
+        li.textContent = "Richard";
+    }
+});
+const secondUl = document.querySelectorAll(".list")[1];
+secondUl.removeChild(secondUl.children[1]);
+
+const uls = document.querySelectorAll(".list");
+
+uls.forEach(ul => {
+    ul.children[0].textContent = "Yair";
+});
+
+const studentLists = document.querySelectorAll(".list");
+
+studentLists.forEach(ul => {
+    ul.classList.add("student_list");
+});
+
+
+const firstUl = document.querySelector(".list")[0];
+firstUl.classList.add("university", "attendance");
+ 
+div.style.backgroundColor = "lightblue";
+div.style.padding = "10px";
+
+document.querySelectorAll(".list")[1].lastElementChild.style.display = "none";
+
+document.querySelectorAll(".list")[0].list[1].style.border = "1px solid black";
+
+document.body.style.fontSize = "20px";
+
+function divok(){
+if (div.style.backgroundColor === "lightblue") {
+    alert("Hello John and Richard");
+}
+    return;
+}
+divok();
+
+    </script>
+    
+</body>
+</html>
