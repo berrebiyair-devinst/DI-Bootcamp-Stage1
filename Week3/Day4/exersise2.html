@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="firstname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lastname"><br><br>
+  <input type="submit" value="Submit" id="submit">
+</form> 
+<ul class="usersAnswer"></ul>
+<script>
+
+//Récupérez le formulaire et affichez-le dans la console.
+console.log(document.querySelector('form'));
+
+
+//Récupérez les entrées par leur identifiant et affichez-les dans la console.
+console.log(document.getElementById('fname'));
+console.log(document.getElementById('lname'));
+
+//Récupérez les entrées par leur nameattribut et affichez-les dans la console.
+console.log(document.getElementsByName('firstname'));
+console.log(document.getElementsByName('lastname'));
+
+//Lorsque l'utilisateur soumet le formulaire (c.-à-d. submitécouteur d'événement)
+
+//pourquoi utiliser event.preventDefault()?
+
+
+// for send the data to the server and refresh the page, we use preventDefault to stop this behavior and handle the data with JavaScript instead.
+
+
+//récupérer les valeurs des balises d'entrée,
+
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const firstName = firstNameInput.value;
+    const lastName = lastNameInput.value;
+
+    //Assurez-vous qu'ils ne sont pas vides,
+    
+    if (firstName === "" || lastName === "") {
+    return;
+}
+});
+
+        //créer une li  valeur par entrée,
+    const liFirst = document.createElement("li");
+    liFirst.textContent = `First Name: ${firstName}`;
+    const liLast = document.createElement("li");
+    liLast.textContent = `Last Name: ${lastName}`;
+        //puis ajoutez-les à un <ul class="usersAnswer"></ul>, sous le form.
+        usersAnswer.appendChild(liFirst);
+        usersAnswer.appendChild(liLast);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+    <h1> Some Facts </h1>
+    <h2> The Chocolate </h2>
+    <h3> History of the chocolate </h3>
+    <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+    Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+    <p> After the European discovery of the Americas, chocolate became 
+    very popular in the wider world, and its demand exploded. </p>
+    <p> Chocolate has since become a popular food product that millions enjoy every day, 
+    thanks to its unique, rich, and sweet taste.</p> 
+    <p> But what effect does eating chocolate have on our health?</p> 
+   
+    </article>
+<button id="boldButton">Make all paragraphs bold</button>
+
+<script>
+
+// Récupérez la propriété DOM et affichez- h1la dans la console.
+
+console.log(document.querySelector('h1').textContent);
+// Utilisez les méthodes DOM pour supprimer le dernier paragraphe de la <article>balise.
+document.querySelector('article').lastElementChild.remove();
+
+// Ajoutez un écouteur d'événements qui changera la couleur de fond de l'élément h2en rouge lorsqu'on cliquera dessus.
+document.querySelector('h2').addEventListener('click',function() {
+    this.style.backgroundColor = 'red';
+});
+// Ajoutez un écouteur d'événements qui masquera l'élément h3lorsqu'on cliquera dessus (utilisez la propriété display:none ).
+document.querySelector('h3').addEventListener('click',function() {
+    this.style.display = 'none';
+});
+
+// Ajoutez un élément <a> <button>au fichier HTML qui, lorsqu'on clique dessus, doit mettre en gras le texte de tous les paragraphes.
+document.getElementById('boldButton').addEventListener('click',function() {
+    let paragraphs = document.querySelectorAll('p');
+    paragraphs.forEach(function(p) {
+        p.style.fontWeight = 'bold';
+    });
+});
+
+// BONUS : Lorsque vous survolez l’icône h1, la taille de la police est définie sur une valeur aléatoire en pixels comprise entre 0 et 100. (Consultez la documentation .)
+document.querySelector('h1').addEventListener('mouseover',function() {
+    this.style.fontSize = Math.floor(Math.random() * 101) + 'px';
+});
+// BONUS : Lorsque vous survolez le deuxième paragraphe, il devrait disparaître progressivement (consultez « animation CSS de fondu » sur Google).
+
+document.querySelectorAll('p')[1].addEventListener('mouseover',function() {
+    this.style.transition = 'opacity 1s';
+    this.style.opacity = '0';
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

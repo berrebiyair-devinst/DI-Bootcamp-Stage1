@@ -1,0 +1,32 @@
+   <html>
+<body>
+
+    <style>
+        div { border : 2px solid blue}
+        button { border : 2px solid red}
+    </style>
+
+    <section id="section">
+        <div id="div">
+            <button id="btn">Click me</button>
+        </div>
+    </section>
+    <script>
+       
+       let y = document.getElementById("div")
+
+       y.addEventListener("click", function() {
+            alert("div clicked");
+        });
+
+        let x = document.getElementById("btn")
+
+        x.addEventListener("click", function() {
+            alert("button clicked");
+        });
+      
+      
+      </script>
+
+</body>
+</html>
