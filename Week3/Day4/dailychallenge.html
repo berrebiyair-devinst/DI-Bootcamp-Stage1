@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+ </head>
+ <body>
+
+    <h1>Mad Libs</h1>
+
+    <form id="libform">
+        <label for="noun">Noun:</label><input type="text" id="noun"><br>
+        <label for="adjective">Adjective:</label><input type="text" id="adjective"><br>
+        <label for="person">Someone's Name:</label><input type="text" id="person"><br>
+        <label for="verb">Verb:</label><input type="text" id="verb"><br>
+        <label for="place">A place:</label><input type="text" id="place"><br>
+        <button id="lib-button">Lib it!</button>
+    </form>
+
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+
+    <script >
+
+// Récupérez la valeur de chaque champ du fichier HTML lors de la soumission du formulaire. N'oubliez pas que event.preventDefault()
+
+// Assurez-vous que les valeurs ne sont pas vides.
+// Rédigez une histoire qui utilise chacune des valeurs.
+// Vérifiez que la console ne présente pas d'erreurs pendant que vous jouez.
+// Bonus : Ajoutez un bouton « Lecture aléatoire » au fichier HTML. Lorsqu’on clique dessus, l’histoire affichée change (en conservant les valeurs saisies par l’utilisateur). L’utilisateur peut cliquer au moins trois fois pour obtenir une nouvelle histoire. Affichez les histoires de manière aléatoire.
+// Sélection des éléments
+const form = document.getElementById("libform");
+const story = document.getElementById("story");
+const randomBtn = document.getElementById("random-btn");
+
+// Tableau qui stockera les valeurs
+let values = {};
+
+// Les différentes histoires possibles
+const stories = [
+    ({ noun, adjective, person, verb, place }) =>
+        `${person} a trouvé un(e) ${noun} très ${adjective} à ${place} et a commencé à ${verb} toute la journée.`,
+
+    ({ noun, adjective, person, verb, place }) =>
+        `Pendant ses vacances à ${place}, ${person} a rencontré un(e) ${noun} ${adjective} qui adorait ${verb}.`,
+
+    ({ noun, adjective, person, verb, place }) =>
+        `Un(e) ${noun} ${adjective} est apparu(e) devant ${person} à ${place} avant de ${verb} à toute vitesse.`
+];
+
+// Fonction qui affiche une histoire aléatoire
+function generateRandomStory() {
+    const randomIndex = Math.floor(Math.random() * stories.length);
+    story.textContent = stories[randomIndex](values);
+}
+
+// Soumission du formulaire
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Récupération des valeurs
+    values = {
+        noun: document.getElementById("noun").value.trim(),
+        adjective: document.getElementById("adjective").value.trim(),
+        person: document.getElementById("person").value.trim(),
+        verb: document.getElementById("verb").value.trim(),
+        place: document.getElementById("place").value.trim()
+    };
+
+    // Vérification que tous les champs sont remplis
+    for (let key in values) {
+        if (values[key] === "") {
+            alert("please fill in all fields !");
+            return;
+        }
+    }
+
+    // Génère une première histoire
+    generateRandomStory();
+});
+
+// Bouton bonus
+randomBtn.addEventListener("click", function () {
+
+    // Vérifie qu'une histoire peut être générée
+    if (Object.keys(values).length === 0) {
+        alert("Commencez par remplir le formulaire.");
+        return;
+    }
+
+    generateRandomStory();
+});
+    </script>
+
+ </body>
+</html>
