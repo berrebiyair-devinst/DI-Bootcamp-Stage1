@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Bar</title>
+</head>
+
+<body>
+
+    <h1>Welcome to my Juice Bar 🍹</h1>
+
+    <div id="juice"></div>
+
+
+    <script>
+
+        function makeJuice(size) {
+
+            let ingredients = [];
+
+            function addIngredients(firstIngredient, secondIngredient, thirdIngredient) {
+
+                ingredients.push(firstIngredient, secondIngredient, thirdIngredient);
+
+            }
+
+
+            function displayJuice() {
+
+                document.getElementById("juice").innerHTML =
+                `The client wants a ${size} juice, containing 
+                ${ingredients[0]}, 
+                ${ingredients[1]}, 
+                ${ingredients[2]}, 
+                ${ingredients[3]}, 
+                ${ingredients[4]}, 
+                ${ingredients[5]}.`;
+
+            }
+
+
+            // Ajout des 6 ingrédients
+            addIngredients("apple", "banana", "orange");
+
+            addIngredients("kiwi", "mango", "strawberry");
+
+
+            // Affichage du jus
+            displayJuice();
+
+        }
+
+
+        // Appel de la fonction externe dans le scope global
+        makeJuice("large");
+
+
+    </script>
+
+</body>
+</html>
