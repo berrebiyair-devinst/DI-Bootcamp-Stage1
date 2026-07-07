@@ -28,13 +28,12 @@
        
         let elem = document.getElementById("animate");
         let pos = 0;
-        let id = setInterval(frame, 5);
+        let id = setInterval(frame, 1);
         function frame() {
-          if (pos == 351) {
+          if (pos == 350) {
             clearInterval(id);
           } else {
             pos++;
-            elem.style.top = pos + "px";
             elem.style.left = pos + "px";
           }
         }

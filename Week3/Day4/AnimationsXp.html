@@ -21,6 +21,7 @@
   setTimeout(timer, 2000, "Hello World");
 
 // Part 2
+const container = document.getElementById("container");
 function addParagraph() {
   const p = document.createElement("p");
   p.textContent = "Hello World!";
@@ -30,8 +31,8 @@ function addParagraph() {
 setTimeout(addParagraph, 2000);
 
 // Part 3
-const container = document.getElementById("container");
-function addParagraph() {
+
+function addParagraphs() {
   const p = document.createElement("p");
   p.textContent = "Hello World!";
   container.appendChild(p);
@@ -41,7 +42,7 @@ function addParagraph() {
   }
 }
 
-const interval = setInterval(addParagraph, 2000);
+const interval = setInterval(addParagraphs, 2000);
 
 document.getElementById("clear").addEventListener("click", function () {
     clearInterval(interval);
