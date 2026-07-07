@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+}
+
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+
+.task label {
+    font-size: 18px;
+}
+
+
+.delete {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+
+.done {
+    color: red;
+    text-decoration: line-through;
+}
