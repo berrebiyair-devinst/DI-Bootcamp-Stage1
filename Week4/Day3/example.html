@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1, 2, 3, 4];
+        function myMap(array, callback) {
+    const result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        result.push(callback(array[i]));
+    }
+
+    return result;
+}
+
+console.log(myMap(numbers, num => num * 2));
+
+// with .map()
+const resulta = numbers.map(num => num * 2);
+console.log(result); 
+
+
+function myFilter(array, callback) {
+    const result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i])) {
+            result.push(array[i]);
+        }
+    }
+
+    return result;
+}
+
+console.log(myFilter(numbers, num => num % 2 === 0));
+// with filter()
+const result = numbers.filter(num => num % 2 === 0);
+
+
+function myReduce(array, callback, initialValue) {
+    let accumulator = initialValue;
+
+    for (let i = 0; i < array.length; i++) {
+        accumulator = callback(accumulator, array[i]);
+    }
+
+    return accumulator;
+}
+
+console.log(myReduce(numbers, (acc, num) => acc + num, 0));
+
+// with reduce ()
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+    </script>
+</body>
+</html>

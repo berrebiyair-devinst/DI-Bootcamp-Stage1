@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+        const ordinal = ["th", "st", "nd", "rd"];
+
+colors.forEach((color, index) => {
+    const position = index + 1;
+    const suffix = position <= 3 ? ordinal[position] : ordinal[0];
+
+    console.log(`${position}${suffix} choice is ${color}.`);
+});
+    </script>
+</body>
+</html>
