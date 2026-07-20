@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1)  [2] === [2] true
+    //  {} === {}  true
+
+    //2) the value is 5
+
+    class Animal{
+        constructor(name,type,color){
+
+        this.name =name;
+        this.type = type;
+        this.color =color;
+        }
+    };
+    class Mammal extends Animal {
+    constructor(name, type, color) {
+        super(name, type, color);
+    }
+
+    sound(noise) {
+        return `${this.name} is a ${this.color} ${this.type}. It says ${noise}.`;
+    }
+}
+const farmerCow = new Mammal("Lily", "cow", "brown and white");
+
+console.log(farmerCow.sound("Moooo"));
+    </script>
+</body>
+</html>

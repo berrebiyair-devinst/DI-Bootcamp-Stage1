@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function displayStudentInfo(objUser){
+    //destructuring
+}
+
+displayStudentInfo({first: 'Elie', last:'Schoppik'});
+function displayStudentInfo(objUser){
+    const { first, last } = objUser; // Déstructuration
+    return `Your full name is ${first} ${last}`;
+}
+
+console.log(displayStudentInfo({ first: 'Elie', last: 'Schoppik' }));
+
+
+    </script>
+</body>
+</html>

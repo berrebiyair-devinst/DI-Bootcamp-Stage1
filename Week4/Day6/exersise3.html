@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const users = { user1: 18273, user2: 92833, user3: 90315 }
+
+const userArray = object.entries(users);
+console.log(userArray)
+
+const newUsers = userArray.map(([user, id]) => {
+    return [user, id * 2];
+});
+
+console.log(newUsers);
+    </script>
+</body>
+</html>
