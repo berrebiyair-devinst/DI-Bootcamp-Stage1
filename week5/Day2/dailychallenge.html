@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="GET">
+    <form id="form" action="" method="GET">
          <label for="name">name:</label>
         <input type="text" id="name" name="name">
         <label for="lastname">lastname:</label>
@@ -32,6 +32,11 @@
             const jsonUser = JSON.stringify(user);
 
            
+    const result = document.createElement("p");
+
+    result.textContent = jsonUser;
+
+    document.body.appendChild(result);
         });
     </script>
 </body>
