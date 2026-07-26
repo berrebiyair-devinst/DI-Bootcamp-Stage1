@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angram</title>
+</head>
+<body>
+
+
+    <script>
+
+       function isAnagram(str1, str2) {
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+
+    str1 = str1.split("");
+    str2 = str2.split("");
+
+    str1.sort();
+    str2.sort();
+
+    str1 = str1.join("");
+    str2 = str2.join("");
+
+    return str1 === str2;
+}
+
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("earth", "heart"));   // true
+console.log(isAnagram("hello", "world"));   // false
+    </script>
+</body>
+</html>
