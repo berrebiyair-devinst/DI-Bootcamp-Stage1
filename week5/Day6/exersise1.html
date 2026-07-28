@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ function compareToTen(number){
+
+    return new Promise((resolve, reject)=>{
+
+        if(number <= 10){
+            resolve("Le nombre est inférieur ou égal à 10");
+        }
+        else{
+            reject("Le nombre est supérieur à 10");
+        }
+
+    });
+
+}
+
+    </script>
+</body>
+</html>
