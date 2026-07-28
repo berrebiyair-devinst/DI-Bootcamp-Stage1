@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function makeAllCaps(array){
+
+    return new Promise((resolve, reject)=>{
+
+        if(array.every(word => typeof word === "string")){
+
+            const upperWords = array.map(word => word.toUpperCase());
+
+            resolve(upperWords);
+
+        }
+        else{
+
+            reject("All elements must be strings");
+
+        }
+
+    });
+
+}
+makeAllCaps(["hello", "world"])
+.then(result => console.log(result))
+.catch(error => console.log(error));
+
+ function sortWords(array){
+
+    return new Promise((resolve, reject)=>{
+
+        if(array.length> 4){
+
+            const sortArray = array.sort()
+
+            resolve(sortArray);
+
+        }
+        else{
+
+            reject("The array must contain more than 4 words");
+
+        }
+
+    });
+
+}
+sortWords(["HELLO","BYE","GOOD","WIN","JS"])
+.then(result => console.log(result))
+.catch(error => console.log(error));
+
+
+    </script>
+</body>
+</html>
