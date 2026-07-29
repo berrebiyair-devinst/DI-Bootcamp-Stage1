@@ -1,31 +1,41 @@
-#challenge1
+# Challenge 1
 
-mot=input('enter your world:')
-dict={}
+word = input("Enter your word: ")
 
-for index,letter in enumerate(mot):
-   if letter in dict:
-      dict[letter].append(index)
-   else:
-       dict[letter]= [index]
-   print(dict)
+letter_indices = {}
 
-#challenge 2
-items_purchase = {"Water": "$1", "Bread": "$3", "TV": "$1000", "Fertilizer": "$20"}
+for index, letter in enumerate(word):
+    if letter in letter_indices:
+        letter_indices[letter].append(index)
+    else:
+        letter_indices[letter] = [index]
+
+print(letter_indices)
+
+
+# Challenge 2
+
+items_purchase = {
+    "Water": "$1",
+    "Bread": "$3",
+    "TV": "$1000",
+    "Fertilizer": "$20"
+}
+
 wallet = "$300"
 
-items_purchase = {"Water": "$1", "Bread": "$3", "TV": "$300"}
+wallet = int(wallet.replace("$", ""))
 
-for item, prix in items_purchase.items():
-    items_purchase[item] = prix.replace("$", "").replace(",", "")
+basket = []
 
-print(items_purchase)
+for item, price in items_purchase.items():
+    price = int(price.replace("$", ""))
 
-wallet=int(wallet.replace("$",""))
-basket=[]
+    if price <= wallet:
+        basket.append(item)
+        wallet -= price
 
-for articles, price in items_purchase.items():
-    if int(price) <= int(wallet):
-        basket.append(articles)
-    
-print(sorted(basket))  # trié alphabétiquement
+if len(basket) == 0:
+    print("Nothing")
+else:
+    print(sorted(basket))
