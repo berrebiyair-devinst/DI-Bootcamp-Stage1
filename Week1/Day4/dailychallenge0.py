@@ -1,22 +1,26 @@
-#1
-number = int(input("your number"))
-length = int(input("your length"))
+# Challenge 1
 
-list=[]
-for i in range (1, lenght =+1):
-    list.append(i*number)
-    print(list)
+number = int(input("Your number: "))
+length = int(input("Your length: "))
 
-    #2
+result_list = []
 
-mot = input("Entrez un mot : ")
+for i in range(1, length + 1):
+    result_list.append(i * number)
 
-resultat = ""
+print(result_list)
 
-for i in range(len(mot)):
-    if i == 0:  # première lettre, toujours ajoutée
-        resultat += mot[i]
-    elif mot[i] != mot[i-1]:  # si différente de la précédente
-        resultat += mot[i]
 
-print(resultat)
+# Challenge 2
+
+word = input("Enter a word: ")
+
+result = ""
+
+for i in range(len(word)):
+    if i == 0:
+        result += word[i]
+    elif word[i] != word[i - 1]:
+        result += word[i]
+
+print(result)
