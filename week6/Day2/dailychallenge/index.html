@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy Random</title>
+</head>
+
+<body>
+
+    <h1>Rechercher un GIF aléatoire</h1>
+
+    <form id="gifForm">
+        <input
+            type="text"
+            id="category"
+            placeholder="Entrez une catégorie"
+            required
+        >
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <button id="deleteAll">SUPPRIMER TOUT</button>
+
+    <!-- Les GIF seront ajoutés ici -->
+    <div id="gifContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
