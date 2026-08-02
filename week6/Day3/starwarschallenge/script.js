@@ -1,10 +1,4 @@
-console.log("Star Wars AJAX Challenge");
-
-
-// ===============================
-// 1. RÉCUPÉRER LES ÉLÉMENTS DU DOM
-// ===============================
-
+// Récupérer les éléments du DOM
 const button = document.querySelector("#button");
 const nameElement = document.querySelector("#name");
 const heightElement = document.querySelector("#height");
@@ -13,114 +7,58 @@ const birthYearElement = document.querySelector("#birth-year");
 const homeWorldElement = document.querySelector("#home-world");
 
 
-// ======================================
-// 2. RÉCUPÉRER UN PERSONNAGE ALÉATOIRE
-// ======================================
-
-function getInfo() {
-
-    // Afficher le chargement
+// Récupérer un personnage et sa planète
+async function getInfo() {
     updateWithLoading();
 
-    // Nombre aléatoire entre 1 et 83
-    const randomNumber = Math.floor(Math.random() * 83) + 1;
+    try {
+        const randomNumber = Math.floor(Math.random() * 83) + 1;
 
-    const apiUrl =
-        `https://www.swapi.tech/api/people/${randomNumber}`;
+        const characterUrl =
+            `https://www.swapi.tech/api/people/${randomNumber}`;
 
-    // Créer une nouvelle requête AJAX
-    const xhr = new XMLHttpRequest();
+        // Récupérer le personnage
+        const characterResponse = await fetch(characterUrl);
 
-    // Préparer la requête
-    xhr.open("GET", apiUrl);
-
-    // Demander une réponse JSON
-    xhr.responseType = "json";
-
-    // Envoyer la requête
-    xhr.send();
-
-
-    // Quand la réponse est reçue
-    xhr.onload = function () {
-
-        if (xhr.status !== 200) {
-
-            updateInfoWithError();
-            console.log(`Error: ${xhr.status}`);
-
-            return;
+        if (!characterResponse.ok) {
+            throw new Error(
+                `Character error: ${characterResponse.status}`
+            );
         }
 
-        // Avec swapi.tech, les informations du personnage
-        // se trouvent dans result.properties
-        const character = xhr.response.result.properties;
+        const characterData = await characterResponse.json();
 
-        // Récupérer le monde d'origine
-        getHomeWorld(character);
-    };
+        const character = characterData.result.properties;
 
+        // Récupérer la planète
+        const homeWorldResponse = await fetch(character.homeworld);
 
-    // En cas d'erreur réseau
-    xhr.onerror = function () {
+        if (!homeWorldResponse.ok) {
+            throw new Error(
+                `Home world error: ${homeWorldResponse.status}`
+            );
+        }
+
+        const homeWorldData = await homeWorldResponse.json();
+
+        const planetName =
+            homeWorldData.result.properties.name;
+
+        updateInfo(character, planetName);
+
+    } catch (error) {
+        console.error(
+            "Error fetching Star Wars data:",
+            error
+        );
 
         updateInfoWithError();
-        console.log("Network error");
-
-    };
+    }
 }
 
 
-// ======================================
-// 3. RÉCUPÉRER LE MONDE D'ORIGINE
-// ======================================
-
-function getHomeWorld(character) {
-
-    const xhrPlanet = new XMLHttpRequest();
-
-    // character.homeworld contient l'URL de la planète
-    xhrPlanet.open("GET", character.homeworld);
-
-    xhrPlanet.responseType = "json";
-
-    xhrPlanet.send();
-
-
-    xhrPlanet.onload = function () {
-
-        if (xhrPlanet.status !== 200) {
-
-            updateInfoWithError();
-            console.log(`Planet error: ${xhrPlanet.status}`);
-
-            return;
-        }
-
-        // Les informations de la planète sont aussi
-        // dans result.properties
-        const planet = xhrPlanet.response.result.properties;
-
-        // Afficher le personnage et la planète
-        updateInfo(character, planet.name);
-    };
-
-
-    xhrPlanet.onerror = function () {
-
-        updateInfoWithError();
-        console.log("Planet network error");
-
-    };
-}
-
-
-// ======================================
-// 4. AFFICHER LES INFORMATIONS
-// ======================================
-
+// Afficher les informations
 function updateInfo(character, planetName) {
-
     nameElement.innerText = character.name;
 
     heightElement.innerText =
@@ -137,12 +75,28 @@ function updateInfo(character, planetName) {
 }
 
 
-// ======================================
-// 5. AFFICHER UNE ERREUR
-// ======================================
+// Afficher le chargement
+function updateWithLoading() {
+    nameElement.innerHTML = "";
 
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-spinner fa-spin";
+
+    const text = document.createElement("p");
+    text.innerText = "Loading...";
+
+    nameElement.appendChild(icon);
+    nameElement.appendChild(text);
+
+    heightElement.innerText = "";
+    genderElement.innerText = "";
+    birthYearElement.innerText = "";
+    homeWorldElement.innerText = "";
+}
+
+
+// Afficher une erreur
 function updateInfoWithError() {
-
     nameElement.innerText =
         "Oh No! That person isn't available.";
 
@@ -153,26 +107,5 @@ function updateInfoWithError() {
 }
 
 
-// ======================================
-// 6. AFFICHER LE CHARGEMENT
-// ======================================
-
-function updateWithLoading() {
-
-    nameElement.innerHTML = `
-        <i class="fa-solid fa-spinner fa-spin"></i>
-        <p>Loading...</p>
-    `;
-
-    heightElement.innerText = "";
-    genderElement.innerText = "";
-    birthYearElement.innerText = "";
-    homeWorldElement.innerText = "";
-}
-
-
-// ======================================
-// 7. ÉVÉNEMENT DU BOUTON
-// ======================================
-
+// Lancer la recherche au clic
 button.addEventListener("click", getInfo);
