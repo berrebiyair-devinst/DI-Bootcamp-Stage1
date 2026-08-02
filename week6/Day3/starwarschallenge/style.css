@@ -1,0 +1,13 @@
+
+body {
+    background-color: black;
+    background-image: url(https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp);
+    font-family: 'Helvetica Neue';
+    color: yellow;
+    text-align: center;
+}
+feuille de style user-agent
+body {
+    display: block;
+    margin: 8px;
+}
