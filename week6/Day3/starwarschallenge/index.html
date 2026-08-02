@@ -3,62 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars GIFs</title>
+
+    <title>Star Wars Characters</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome pour l'icône de chargement -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    >
 </head>
-<link rel="stylesheet" href="style.css">
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-
-
 
 <body>
 
-	<div class="wrapper">
+    <div class="wrapper">
 
+        <div class="logo"></div>
 
-		<div class="logo"></div>
+        <div class="info-container">
 
-		<div class="info-container">
+            <h1 id="name">Click the button to find a character</h1>
 
-			<h1 id="name">Oh No! That person isnt available.</h1>
+            <p id="height"></p>
+            <p id="gender"></p>
+            <p id="birth-year"></p>
+            <p id="home-world"></p>
 
-			<p id="height"></p>
+        </div>
 
-			<p id="gender"></p>
+        <button type="button" id="button">
+            Find Someone
+        </button>
 
-			<p id="birth-year"></p>
-
-			<p id="home-world"></p>
-			
-		</div>
-
-		<button type="button" id="button" name="button">Find Someone</button>
-
-
-	</div>
-
-
-
-<script  src="script.js"></script>
-
-
-</body>
-
-
-
-<body>
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
