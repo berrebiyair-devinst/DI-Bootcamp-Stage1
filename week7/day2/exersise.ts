@@ -47,3 +47,49 @@ function createPerson(name: string, age: number): Person {
 
 console.log(createPerson("Yair", 22));
 
+//ex8
+function getAction(role: string): string {
+
+    switch (role) {
+
+        case "admin":
+            return "Access all features";
+
+        case "editor":
+            return "Edit content";
+
+        case "user":
+            return "View content";
+
+        case "guest":
+            return "Limited access";
+
+        default:
+            return "Unknown role";
+    }
+
+}
+
+console.log(getAction("admin"));
+console.log(getAction("editor"));
+console.log(getAction("user"));
+console.log(getAction("guest"));
+console.log(getAction("test"));
+//ex9
+// Surcharges
+function greet(): string;
+function greet(name: string): string;
+
+// Implémentation
+function greet(name?: string): string {
+
+    if (name) {
+        return `Hello ${name}!`;
+    }
+
+    return "Hello!";
+}
+
+// Tests
+console.log(greet());
+console.log(greet("Yair"));
