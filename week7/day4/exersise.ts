@@ -59,6 +59,23 @@ const dog = new Dog("Rex");
 console.log(dog.makeSound()); // Output: "Woof!"
 
 // Exersise 4
+
+
+class Calculator {
+    static add ( a:number, b:number): number{
+        return a+b;
+    }
+    static subtract ( a:number, b:number): number{
+        return a-b;
+    }
+};
+
+Calculator.add(5, 3); // Returns 8
+Calculator.subtract(5, 3); // Returns 2
+
+
+
+// Exersise 5
 interface User {
     readonly id: number;
     email: string;
@@ -72,5 +89,12 @@ function printUserDetails(user: PremiumUser): string {
     return `User ID: ${user.id}, Name: ${user.name}, Email: ${user.email} Membership Level: ${user.membershipLevel ?? "N/A"}`;
 }
 
-const premiumUser: PremiumUser = { id: 1, email: "email@gmail.com", name: "Yair", membershipLevel: "Gold" };
+const premiumUser: PremiumUser = { 
+    id: 1, 
+    email: "email@gmail.com", 
+    name: "Yair", 
+    membershipLevel: "Gold" };
+
 printUserDetails(premiumUser);
+
+
