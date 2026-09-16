@@ -1,0 +1,321 @@
+=========================
+EXPRESS.JS - ROUTING
+=========================
+
+Express est une librairie utilisée avec Node.js pour créer facilement un serveur web et des API.
+
+1. CRÉER UN SERVEUR EXPRESS
+
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+- express = module Express
+- app = notre application / serveur Express
+- port = port utilisé par le serveur
+- app.listen() = démarre le serveur
+
+
+2. LES ROUTES
+
+Une route permet de dire au serveur quoi faire lorsqu'un client demande une certaine adresse.
+
+Structure :
+
+app.METHOD(PATH, HANDLER)
+
+Exemple :
+
+app.get("/users", (req, res) => {
+    res.send("Liste des utilisateurs");
+});
+
+- app = application Express
+- get = méthode HTTP
+- "/users" = chemin / route
+- req = REQUEST = requête reçue du client
+- res = RESPONSE = réponse envoyée au client
+- res.send() = envoie une réponse
+
+
+3. EXEMPLE
+
+app.get("/products", (req, res) => {
+    res.send("Liste des produits");
+});
+
+Adresse :
+
+http://localhost:3000/products
+
+localhost = mon ordinateur / serveur local
+3000 = port du serveur
+/products = route
+
+
+4. PLUSIEURS ROUTES
+
+app.get("/", (req, res) => {
+    res.send("Accueil");
+});
+
+app.get("/users", (req, res) => {
+    res.send("Liste des utilisateurs");
+});
+
+app.get("/products", (req, res) => {
+    res.send("Liste des produits");
+});
+
+
+5. REQUEST / RESPONSE
+
+req = request
+→ informations concernant la requête envoyée par le client
+
+res = response
+→ permet au serveur de répondre au client
+
+Exemple :
+
+(req, res) => {
+    res.send("Hello World!");
+}
+
+
+6. EVENT LOOP - RAPPEL
+
+Node.js exécute principalement JavaScript sur un seul thread.
+
+Lorsqu'une opération prend du temps (timer, lecture de fichier, etc.),
+Node.js évite de bloquer l'exécution principale.
+
+L'Event Loop permet de gérer les callbacks lorsque les opérations sont prêtes.
+
+Exemple :
+
+console.log("A");
+
+setTimeout(() => {
+    console.log("B");
+}, 1000);
+
+console.log("C");
+
+Résultat :
+A
+C
+B
+
+
+=========================
+À RETENIR
+=========================
+
+Node.js = permet d'exécuter JavaScript côté serveur.
+
+Express = facilite la création du serveur et des routes.
+
+Route = METHOD + PATH + HANDLER
+
+app.get("/users", (req, res) => {
+    res.send("Users");
+});
+
+req = requête reçue
+res = réponse envoyée
+
+http://localhost:3000/users
+          ↓       ↓
+        port    route
+
+
+
+
+        http.createServer() → crée le serveur
+
+req                → requête reçue
+
+res                → réponse envoyée
+
+req.url            → route demandée
+
+res.end()          → envoie/termine la réponse
+
+200                → OK
+
+404                → introuvable
+
+Content-Type       → indique le type de données
+
+text/html          → HTML
+
+application/json   → JSON
+
+JSON.stringify()   → transforme un objet JS en JSON
+
+
+
+
+
+=================================
+EXPRESS - PARAMS ET QUERY
+=================================
+
+1. ROUTE PARAMETERS → req.params
+
+Les paramètres de route permettent de créer des routes dynamiques.
+
+On utilise ":" dans la route.
+
+Exemple :
+
+app.get("/api/products/:productID", (req, res) => {
+    console.log(req.params.productID);
+});
+
+Si on visite :
+
+http://localhost:3000/api/products/25
+
+Alors :
+
+req.params.productID
+
+contient :
+
+"25"
+
+IMPORTANT :
+Les paramètres récupérés dans l'URL sont des strings.
+
+Donc si on a besoin d'un nombre :
+
+const id = Number(req.params.productID);
+
+
+On peut ensuite utiliser cet ID pour trouver un objet :
+
+const product = products.find(product => product.id === id);
+
+Exemple complet :
+
+app.get("/api/products/:productID", (req, res) => {
+
+    const id = Number(req.params.productID);
+
+    const product = products.find(
+        product => product.id === id
+    );
+
+    if (!product) {
+        return res.status(404).send("Product not found");
+    }
+
+    res.json(product);
+});
+
+
+---------------------------------
+
+2. QUERY PARAMETERS → req.query
+
+Les query parameters servent souvent à rechercher ou filtrer des données.
+
+Ils sont placés après "?" dans l'URL.
+
+Exemple :
+
+http://localhost:3000/api/search?title=node
+
+Décomposition :
+
+/api/search → route
+?           → début de la query
+title       → clé
+node        → valeur
+
+Pour récupérer "node" :
+
+req.query.title
+
+Donc :
+
+req.query.title = "node"
+
+ATTENTION :
+req.query.title ne contient PAS directement les objets trouvés.
+
+Il contient seulement la valeur donnée dans l'URL.
+
+Ensuite on peut utiliser cette valeur pour filtrer les données :
+
+const title = req.query.title.toLowerCase();
+
+const results = posts.filter(post =>
+    post.title.toLowerCase().includes(title)
+);
+
+res.json(results);
+
+
+=================================
+DIFFÉRENCE PARAMS / QUERY
+=================================
+
+PARAMS :
+
+/api/products/25
+              ↓
+req.params.productID
+              ↓
+            "25"
+
+→ Souvent utilisé pour identifier une ressource précise.
+
+
+QUERY :
+
+/api/search?title=node
+                  ↓
+req.query.title
+                  ↓
+                "node"
+
+→ Souvent utilisé pour rechercher / filtrer.
+
+
+À RETENIR :
+
+req.params → valeur dans le chemin de l'URL
+
+req.query → valeur après le "?" dans l'URL
+
+
+
+CREATE → POST
+→ req.body
+→ push()
+→ 201 Created
+
+READ → GET
+→ req.params si on cherche un ID précis
+→ find()
+→ 200 OK
+
+UPDATE → PUT
+→ req.params pour l'ID
+→ findIndex()
+→ req.body pour les nouvelles données
+→ products[index] = updatedProduct
+→ 200 OK
+
+DELETE → DELETE
+→ req.params pour l'ID
+→ findIndex()
+→ splice(index, 1)
+→ 200 OK
