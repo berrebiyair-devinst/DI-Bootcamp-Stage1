@@ -5,7 +5,7 @@ const booksRouter = require('./routes/books');
 
 app.use(express.json());
 
-app.use('/api/books', booksRouter);
+app.use('/api/books', booksRouter );
 
 app.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
