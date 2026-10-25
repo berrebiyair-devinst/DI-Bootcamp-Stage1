@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+    <h1>Inscription</h1>
+
+    <form id="registerForm">
+        <input name="lastName" placeholder="Nom" required>
+        <input name="firstName" placeholder="Prenom" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="username" placeholder="Nom d'utilisateur" required>
+        <input name="password" type="password" placeholder="Mot de passe" required>
+
+        <button type="submit" disabled>S'inscrire</button>
+    </form>
+
+    <p id="message"></p>
+    <a href="/login.html">Se connecter</a>
+
+    <script src="/script.js"></script>
+</body>
+</html>
