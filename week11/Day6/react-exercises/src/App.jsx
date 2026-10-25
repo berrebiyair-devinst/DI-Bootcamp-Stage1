@@ -1,7 +1,7 @@
 import Exercise1 from "./Exercise1";
 import UserFavoriteAnimals from "./UserFavoriteAnimals";
 import Exercise from "./Exercise3";
-
+import DailyChallenge from "./DailyChallenge";
 function App() {
   const user = {
     firstName: "Bob",
@@ -20,7 +20,7 @@ function App() {
 
       <UserFavoriteAnimals favAnimals={user.favAnimals} />
       <hr />
-<Exercise />
+      <DailyChallenge />
     </div>
   );
 }
