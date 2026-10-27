@@ -9,11 +9,11 @@ class BuggyCounter extends React.Component {
     };
   }
 
-  handleClick = () => {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-  };
+ handleClick = () => {
+  this.setState((prevState) => ({
+    counter: prevState.counter + 1
+  }));
+};
 
   render() {
     if (this.state.counter === 5) {

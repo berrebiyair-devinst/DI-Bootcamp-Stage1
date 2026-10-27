@@ -61,10 +61,9 @@ class Color extends React.Component {
         </button>
 
         {this.state.show && <Child />}
-
-        <button onClick={this.removeChild}>
-          Supprimer
-        </button>
+<button onClick={this.removeChild}>
+  Delete
+</button>
       </div>
     );
   }
