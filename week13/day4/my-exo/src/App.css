@@ -1,0 +1,75 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498db;
+  padding: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.quote-box {
+  background-color: white;
+  padding: 45px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.quote-box h1 {
+  font-size: 26px;
+  line-height: 1.5;
+  color: #3498db;
+  margin-bottom: 25px;
+  transition: color 0.5s ease;
+}
+
+.quote-box p {
+  font-size: 18px;
+  color: #555;
+  text-align: right;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.quote-box button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+}
+
+.quote-box button:hover {
+  transform: translateY(-2px);
+}
+
+.quote-box button:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+  .quote-box {
+    padding: 25px;
+  }
+
+  .quote-box h1 {
+    font-size: 21px;
+  }
+}
