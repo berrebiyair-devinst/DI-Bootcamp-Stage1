@@ -13,11 +13,11 @@ favorite_book("les miserables")
 
 # Exercice 3
 
-def describe_city(city, country="uknow"):
-    print( city  + "is in" + country)
+def describe_city(city, country="unknown"):
+    print(f"{city} is in {country}.")
 
 describe_city("Ramat gan", "Israel")
-describe_city("Jrerusalem", )
+describe_city("Jerusalem", "Israel")
      
 
 #Exercie 4
