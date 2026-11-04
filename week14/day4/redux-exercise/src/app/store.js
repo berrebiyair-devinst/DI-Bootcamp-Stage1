@@ -1,9 +1,10 @@
-import { TodoSlice } from "../features/TodoSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import { dailyPlannerSlice } from "../features/DailyPlainer";
+import { TodoSlice } from "../features/TodoSlice";
+import dailyPlannerReducer from "../features/dailyPlannerSlice";
+
 export const store = configureStore({
-    reducer: {
-        todos: TodoSlice.reducer,
-        dailyPlanner: dailyPlannerSlice.reducer
-    }
-})
+  reducer: {
+    todos: TodoSlice.reducer,
+    dailyPlanner: dailyPlannerReducer
+  }
+});
