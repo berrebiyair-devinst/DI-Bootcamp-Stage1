@@ -182,3 +182,75 @@
     border-right-color: var(--border);
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
+}
+
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #e5e7eb;
+  color: #222;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button:hover {
+  background: #d1d5db;
+}
+
+button.active {
+  background: #2563eb;
+  color: white;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  padding: 12px;
+  margin: 10px 0;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.edit-task {
+  display: inline-block;
+}
+
