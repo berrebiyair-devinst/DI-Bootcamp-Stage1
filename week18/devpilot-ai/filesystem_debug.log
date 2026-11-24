@@ -1,0 +1,6 @@
+Secure MCP Filesystem Server running on stdio
+Effective allowed directories (from the command line):
+  C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai
+Client does not support MCP Roots, using allowed directories set from server args: [ 'C:\\Users\\berre\\DI-Bootcamp-Stage1\\week18\\devpilot-ai' ]
+Effective allowed directories (from the command line):
+  C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai

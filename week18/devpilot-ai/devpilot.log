@@ -1,0 +1,425 @@
+2026-11-24 10:24:45,119 - INFO - Serveur connecté : filesystem
+2026-11-24 10:24:47,845 - INFO - Serveur connecté : git
+2026-11-24 10:24:49,498 - INFO - Serveur connecté : analyzer
+2026-11-24 10:24:50,292 - INFO - HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-11-24 10:24:50,630 - ERROR - Tentative 1 échouée
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 458, in run_agent
+  |     return await run_once(question, history)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 253, in run_once
+  |     async with AsyncExitStack() as stack:
+  |                ^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 754, in __aexit__
+  |     raise exc_details[1]
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Exception Group Traceback (most recent call last):
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+      |     cb_suppress = await cb(*exc_details)
+      |                   ^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+      |     await self.gen.athrow(value)
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+      |     async with anyio.create_task_group() as tg:
+      |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+      |     raise BaseExceptionGroup(
+      | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+      +-+---------------- 1 ----------------
+        | Exception Group Traceback (most recent call last):
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+        |     yield read_stream, write_stream
+        |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+        |     cb_suppress = await cb(*exc_details)
+        |                   ^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+        |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+        |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+        |     raise BaseExceptionGroup(
+        | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+        +-+---------------- 1 ----------------
+          | Exception Group Traceback (most recent call last):
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+          |     cb_suppress = await cb(*exc_details)
+          |                   ^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+          |     await self.gen.athrow(value)
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+          |     async with anyio.create_task_group() as tg:
+          |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+          |     raise BaseExceptionGroup(
+          | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+          +-+---------------- 1 ----------------
+            | Exception Group Traceback (most recent call last):
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+            |     yield read_stream, write_stream
+            |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+            |     cb_suppress = await cb(*exc_details)
+            |                   ^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+            |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+            |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+            |     raise BaseExceptionGroup(
+            | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+            +-+---------------- 1 ----------------
+              | Traceback (most recent call last):
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 337, in run_once
+              |     response = await ai.chat.completions.create(
+              |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3420, in create
+              |     return await self._post(
+              |            ^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+              |     return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+              |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+              |     raise self._make_status_error_from_response(err.response) from None
+              | openai.BadRequestError: Error code: 400
+              +------------------------------------
+2026-11-24 10:24:51,980 - INFO - Serveur connecté : filesystem
+2026-11-24 10:24:53,608 - INFO - Serveur connecté : git
+2026-11-24 10:24:54,975 - INFO - Serveur connecté : analyzer
+2026-11-24 10:24:55,403 - INFO - HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-11-24 10:24:55,740 - ERROR - Tentative 2 échouée
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 458, in run_agent
+  |     return await run_once(question, history)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 253, in run_once
+  |     async with AsyncExitStack() as stack:
+  |                ^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 754, in __aexit__
+  |     raise exc_details[1]
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Exception Group Traceback (most recent call last):
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+      |     cb_suppress = await cb(*exc_details)
+      |                   ^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+      |     await self.gen.athrow(value)
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+      |     async with anyio.create_task_group() as tg:
+      |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+      |     raise BaseExceptionGroup(
+      | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+      +-+---------------- 1 ----------------
+        | Exception Group Traceback (most recent call last):
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+        |     yield read_stream, write_stream
+        |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+        |     cb_suppress = await cb(*exc_details)
+        |                   ^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+        |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+        |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+        |     raise BaseExceptionGroup(
+        | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+        +-+---------------- 1 ----------------
+          | Exception Group Traceback (most recent call last):
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+          |     cb_suppress = await cb(*exc_details)
+          |                   ^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+          |     await self.gen.athrow(value)
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+          |     async with anyio.create_task_group() as tg:
+          |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+          |     raise BaseExceptionGroup(
+          | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+          +-+---------------- 1 ----------------
+            | Exception Group Traceback (most recent call last):
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+            |     yield read_stream, write_stream
+            |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+            |     cb_suppress = await cb(*exc_details)
+            |                   ^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+            |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+            |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+            |     raise BaseExceptionGroup(
+            | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+            +-+---------------- 1 ----------------
+              | Traceback (most recent call last):
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 337, in run_once
+              |     response = await ai.chat.completions.create(
+              |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3420, in create
+              |     return await self._post(
+              |            ^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+              |     return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+              |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+              |     raise self._make_status_error_from_response(err.response) from None
+              | openai.BadRequestError: Error code: 400
+              +------------------------------------
+2026-11-24 10:25:44,174 - INFO - Serveur connecté : filesystem
+2026-11-24 10:25:46,332 - INFO - Serveur connecté : git
+2026-11-24 10:25:47,792 - INFO - Serveur connecté : analyzer
+2026-11-24 10:25:48,190 - INFO - HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-11-24 10:25:48,558 - ERROR - Tentative 1 échouée
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 458, in run_agent
+  |     return await run_once(question, history)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 253, in run_once
+  |     async with AsyncExitStack() as stack:
+  |                ^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 754, in __aexit__
+  |     raise exc_details[1]
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Exception Group Traceback (most recent call last):
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+      |     cb_suppress = await cb(*exc_details)
+      |                   ^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+      |     await self.gen.athrow(value)
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+      |     async with anyio.create_task_group() as tg:
+      |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+      |     raise BaseExceptionGroup(
+      | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+      +-+---------------- 1 ----------------
+        | Exception Group Traceback (most recent call last):
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+        |     yield read_stream, write_stream
+        |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+        |     cb_suppress = await cb(*exc_details)
+        |                   ^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+        |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+        |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+        |     raise BaseExceptionGroup(
+        | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+        +-+---------------- 1 ----------------
+          | Exception Group Traceback (most recent call last):
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+          |     cb_suppress = await cb(*exc_details)
+          |                   ^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+          |     await self.gen.athrow(value)
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+          |     async with anyio.create_task_group() as tg:
+          |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+          |     raise BaseExceptionGroup(
+          | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+          +-+---------------- 1 ----------------
+            | Exception Group Traceback (most recent call last):
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+            |     yield read_stream, write_stream
+            |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+            |     cb_suppress = await cb(*exc_details)
+            |                   ^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+            |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+            |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+            |     raise BaseExceptionGroup(
+            | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+            +-+---------------- 1 ----------------
+              | Traceback (most recent call last):
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 337, in run_once
+              |     response = await ai.chat.completions.create(
+              |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3420, in create
+              |     return await self._post(
+              |            ^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+              |     return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+              |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+              |     raise self._make_status_error_from_response(err.response) from None
+              | openai.BadRequestError: Error code: 400
+              +------------------------------------
+2026-11-24 10:25:50,029 - INFO - Serveur connecté : filesystem
+2026-11-24 10:25:52,217 - INFO - Serveur connecté : git
+2026-11-24 10:25:54,118 - INFO - Serveur connecté : analyzer
+2026-11-24 10:25:54,412 - INFO - HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-11-24 10:25:54,793 - ERROR - Tentative 2 échouée
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 458, in run_agent
+  |     return await run_once(question, history)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 253, in run_once
+  |     async with AsyncExitStack() as stack:
+  |                ^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 754, in __aexit__
+  |     raise exc_details[1]
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Exception Group Traceback (most recent call last):
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+      |     cb_suppress = await cb(*exc_details)
+      |                   ^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+      |     await self.gen.athrow(value)
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+      |     async with anyio.create_task_group() as tg:
+      |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+      |     raise BaseExceptionGroup(
+      | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+      +-+---------------- 1 ----------------
+        | Exception Group Traceback (most recent call last):
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+        |     yield read_stream, write_stream
+        |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+        |     cb_suppress = await cb(*exc_details)
+        |                   ^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+        |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+        |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+        |     raise BaseExceptionGroup(
+        | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+        +-+---------------- 1 ----------------
+          | Exception Group Traceback (most recent call last):
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+          |     cb_suppress = await cb(*exc_details)
+          |                   ^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+          |     await self.gen.athrow(value)
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+          |     async with anyio.create_task_group() as tg:
+          |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+          |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+          |     raise BaseExceptionGroup(
+          | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+          +-+---------------- 1 ----------------
+            | Exception Group Traceback (most recent call last):
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+            |     yield read_stream, write_stream
+            |   File "C:\Users\berre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 737, in __aexit__
+            |     cb_suppress = await cb(*exc_details)
+            |                   ^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+            |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+            |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 871, in __aexit__
+            |     raise BaseExceptionGroup(
+            | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+            +-+---------------- 1 ----------------
+              | Traceback (most recent call last):
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\client.py", line 337, in run_once
+              |     response = await ai.chat.completions.create(
+              |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3420, in create
+              |     return await self._post(
+              |            ^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+              |     return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+              |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              |   File "C:\Users\berre\DI-Bootcamp-Stage1\week18\devpilot-ai\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+              |     raise self._make_status_error_from_response(err.response) from None
+              | openai.BadRequestError: Error code: 400
+              +------------------------------------
+2026-11-24 10:30:03,875 - INFO - Serveur filesystem connecté : 16 outils
+2026-11-24 10:30:05,786 - INFO - Serveur git connecté : 14 outils
+2026-11-24 10:30:07,163 - INFO - Serveur analyzer connecté : 1 outils
+2026-11-24 10:30:07,846 - INFO - HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-11-24 10:30:07,847 - ERROR - Erreur API xAI 400 : Incorrect API key provided. You can obtain an API key from https://console.x.ai.

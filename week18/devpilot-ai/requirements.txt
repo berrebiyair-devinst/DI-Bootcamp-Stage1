@@ -1,0 +1,5 @@
+mcp==2.3.0
+mcp-server-git==2026.11.18
+openai>=1.70,<4
+python-dotenv>=1.0,<2
+streamlit>=1.40,<3
